@@ -6,6 +6,14 @@
 Läksyssä tehdään Puppet-moduuli, joka varmistaa, että nmap-paketti on asennettuna koneella.
 
 
+### Testiympäristö
+
+	- Haaga-Helian laboratorioluokan 5004 työasema
+	- Xubuntu 15.04 LTS 64 bit
+	- Virtualbox-kone
+		- 2048 MB RAM
+		- 12 GB tallennustilaa
+
 ### Puppetin asentaminen
 
 Ensiksi asennetaan Puppet-ohjelmisto Ubuntun omasta paketinhallinnasta
@@ -33,9 +41,10 @@ Hakemistoon luomme luokan "init.pp", joka sisältää Puppet moduulin luokkamä�
 
 	
 	
-	class nmap {				# Määritellään luokan nimi
-		package { 'nmap:'		# Määritellään mitä moduuli tekee (asentaa tässä tapauksessa paketin)
-			ensure => 'installed',	# Määritellään, että paketin on oltava asennettuna
+	class nmap {					# Määritellään luokan nimi
+		package { 'nmap:'			# Määritellään mitä moduuli tekee (asentaa tässä tapauksessa paketin)
+			ensure => 'installed',		# Määritellään, että paketin on oltava asennettuna
 		}
 	}
 
+Tallennetaan tiedosto ja ajetaan moduuli koneellamme.
