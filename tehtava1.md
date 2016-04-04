@@ -43,8 +43,33 @@ Hakemistoon luomme luokan "init.pp", joka sisältää Puppet moduulin luokkamä�
 	
 	class nmap {					# Määritellään luokan nimi
 		package { 'nmap:'			# Määritellään mitä moduuli tekee (asentaa tässä tapauksessa paketin)
-			ensure => 'installed',		# Määritellään, että paketin on oltava asennettuna
+			ensure => 'installed',	# Määritellään, että paketin on oltava asennettuna
 		}
 	}
 
-Tallennetaan tiedosto ja ajetaan moduuli koneellamme.
+Tallennetaan tiedosto ja ajetaan moduuli koneellamme. Olemme hakemistossa ~/puppet/modules/nmap/manifests. Koska moduulimme asentaa paketin apt-paketinhallintaa käyttäen, tarvitsee toimenpide pääkäyttäjäoikeudet.
+
+	$ sudo -i
+
+Nyt ajamme moduulin kutsumalla luokkaa "nmap".
+
+	$ puppet apply --modulepath ~/puppet/modules/ -e 'class {"nmap":}'
+
+Saamme seuraavan ilmoituksen:
+
+	Notice: Compiled catalog for xubutuu-virtualbox in environment production in 0.35 seconds
+	Notice: /Stage[main]/Nmap/Package[nmap]/ensure: ensure changed 'purged' to 'present'
+	Notice: Finished catalog run in 4.13 seconds
+
+Tarkistetaan tämän jälkeen, että nmap asentui koneelle.
+
+	$ dpkg -s nmap|grep installed
+
+Komento antaa tulosteen:
+
+	Status: install ok installed
+
+
+### Pohdinnat
+
+Harjoitus oli yksinkertainen, mutta kuitenkin hyvin opettava. Ymmärrän jo pelkästään tämän harjoituksen jälkeen enemmän keskitetyn hallinnan hyödyllisyyden. Puppet vaikuttaa alkuun erittäin hyvältä valinnalta kurssia varten, koska erityisesti sen dokumentaatio on erittäin kattava.
