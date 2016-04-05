@@ -73,3 +73,9 @@ Komento antaa tulosteen:
 ### Pohdinnat
 
 Harjoitus oli yksinkertainen, mutta kuitenkin hyvin opettava. Ymmärrän jo pelkästään tämän harjoituksen jälkeen enemmän keskitetyn hallinnan hyödyllisyyden. Puppet vaikuttaa alkuun erittäin hyvältä valinnalta kurssia varten, koska erityisesti sen dokumentaatio on erittäin kattava.
+
+
+## Lähteet
+
+http://terokarvinen.com/2013/hello-puppet-revisited-%E2%80%93-on-ubuntu-12-04-lts
+http://www.puppetcookbook.com/posts/install-package.html
