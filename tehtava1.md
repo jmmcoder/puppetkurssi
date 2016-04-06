@@ -27,7 +27,7 @@ Luodaan käyttäjän kotihakemistoon uusi hakemisto "puppet" ja sen alle alihake
 Nyt meillä on Puppet asennettuna ja sille on luotu valmiiksi hakemisto moduulejamme varten.
 
 
-### Moduulin luominen ja testaaminen
+### Moduulin luominen
 
 Nmap-moduulia varten luodaan "puppet/modules/"-hakemistoon uusi alihakemisto moduuliamme varten. Nimetään moduuli kuvaavalla nimellä.
 
@@ -50,6 +50,9 @@ Hakemistoon luomme luokan "init.pp", joka sisältää Puppet moduulin luokkamä�
 Tallennetaan tiedosto ja ajetaan moduuli koneellamme. Olemme hakemistossa ~/puppet/modules/nmap/manifests. Koska moduulimme asentaa paketin apt-paketinhallintaa käyttäen, tarvitsee toimenpide pääkäyttäjäoikeudet.
 
 	$ sudo -i
+
+
+### Moduulin testaaminen
 
 Nyt ajamme moduulin kutsumalla luokkaa "nmap".
 
