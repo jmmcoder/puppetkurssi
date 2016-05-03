@@ -1,4 +1,4 @@
-  class apache2 {
+	class apache2 {
 
           # Ensure the latest apache2 package is installed
           package { "apache2":
@@ -37,4 +37,4 @@
                   require => Package["apache2"]
           }
 
-  }
+	}
